@@ -10,14 +10,14 @@ void _handleNewPointer({
   required _PointersManger pointerManger,
   required int? maxNumOfPointers,
   required bool replaceCurrentWithNext,
-}){
+}) {
   bool mustRegisterPointer = true;
 
-  if(maxNumOfPointers != null){
-    if(pointerManger.numOfRegisteredPointers + 1 > maxNumOfPointers){
+  if (maxNumOfPointers != null) {
+    if (pointerManger.numOfRegisteredPointers + 1 > maxNumOfPointers) {
       pointerManger.acceptPointers = false;
 
-      if(replaceCurrentWithNext){
+      if (replaceCurrentWithNext) {
         final willBeReplacedPointer = pointerManger.lastPointerId;
         pointerManger.lastPointerId = pointerId;
         _cancelPointer(willBeReplacedPointer);
@@ -26,17 +26,19 @@ void _handleNewPointer({
       }
 
       mustRegisterPointer = false;
-    }else if(pointerManger.numOfRegisteredPointers + 1 == maxNumOfPointers){
+    } else if (pointerManger.numOfRegisteredPointers + 1 == maxNumOfPointers) {
       pointerManger.acceptPointers = false;
-    }else if(pointerManger.numOfRegisteredPointers + 1 < maxNumOfPointers){
+    } else if (pointerManger.numOfRegisteredPointers + 1 < maxNumOfPointers) {
       pointerManger.acceptPointers = true;
     }
   }
 
-  if(mustRegisterPointer){pointerManger.addPointer(pointerId);}
+  if (mustRegisterPointer) {
+    pointerManger.addPointer(pointerId);
+  }
 }
 
-class _PointersManger{
+class _PointersManger {
   final _ignoreNotifier = ValueNotifier(false);
   final List<int> _pointersIDs = [];
 
@@ -44,7 +46,8 @@ class _PointersManger{
   bool get havePointers => _pointersIDs.isNotEmpty;
 
   int get lastPointerId => _pointersIDs[numOfRegisteredPointers - 1];
-  set lastPointerId(int value) => _pointersIDs[numOfRegisteredPointers - 1] = value;
+  set lastPointerId(int value) =>
+      _pointersIDs[numOfRegisteredPointers - 1] = value;
 
   bool get acceptPointers => !_ignoreNotifier.value;
   set acceptPointers(bool value) => _ignoreNotifier.value = !value;
@@ -53,8 +56,8 @@ class _PointersManger{
   removePointer(int id) => _pointersIDs.remove(id);
   containsPointer(int id) => _pointersIDs.contains(id);
 
-  void cancelAll(){
-    for(final id in _pointersIDs) {
+  void cancelAll() {
+    for (final id in _pointersIDs) {
       _cancelPointer(id);
     }
   }

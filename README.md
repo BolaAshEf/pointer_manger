@@ -71,11 +71,12 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) => PointerGroupHandler( // here
-    groupTag: _noNegativeGroupTag,
+    groupTag: "no-negative", // this is a single group
     child: Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         PointerMangerWidget.withAll( // here
+          // groupTag: "no-negative", // you can specify the parent group tag.
           child: ElevatedButton(
             onPressed: _n <= 1 ? null : () => setState(() => _n = _n - 2), 
             child: const Text("-2"),
