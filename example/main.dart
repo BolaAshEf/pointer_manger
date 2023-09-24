@@ -35,12 +35,12 @@ class _MyAppState extends State<MyApp> {
       ),
       ElevatedButton(
         onPressed: _n <= 0 ? null : () => setState(() => --_n), 
-        child: const Text("-"),
+        child: const Text("-1"),
       ),
       Text(_n.toString()),
       ElevatedButton(
         onPressed: () => setState(() => ++_n), 
-        child: const Text("+"),
+        child: const Text("+1"),
       ),
     ],
   );
@@ -59,13 +59,13 @@ class _MyAppState extends State<MyApp> {
         PointerMangerWidget.withAll(
           child: ElevatedButton(
             onPressed: _n <= 0 ? null : () => setState(() => --_n), 
-            child: const Text("-"),
+            child: const Text("-1"),
           ),
         ),
         Text(_n.toString()),
         ElevatedButton(
           onPressed: () => setState(() => ++_n), 
-          child: const Text("+"),
+          child: const Text("+1"),
         ),
       ],
     ),
