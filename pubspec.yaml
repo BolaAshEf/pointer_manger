@@ -1,7 +1,7 @@
 name: pointer_manger
 description: Mange the number, type, how, and where touch pointers should interact with your widgets.
 version: 1.0.0
-homepage: # TODO
+homepage: https://github.com/BolaAshEf/pointer_manger
 
 environment:
   sdk: '>=3.1.0 <4.0.0'

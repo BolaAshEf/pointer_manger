@@ -8,6 +8,12 @@ Mange the number, type, how, and where touch pointers should interact with your 
 
 Suppose you have this setup where the number in between may refer to some non-negative quantity you need.
 
+<img src="https://raw.githubusercontent.com/BolaAshEf/pointer_manger/master/assets/0.jpg" height="50px" alt="Screenshot0"/>
+
+<img src="https://raw.githubusercontent.com/BolaAshEf/pointer_manger/master/assets/1.jpg" height="50px" alt="Screenshot1"/>
+
+<img src="https://raw.githubusercontent.com/BolaAshEf/pointer_manger/master/assets/2.jpg" height="50px" alt="Screenshot2"/>
+
 Then the user do THIS:
 
 
